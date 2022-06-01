@@ -1,0 +1,22 @@
+# Island colors
+deep_blue = [59, 95, 204]
+blue = [65, 105, 225]
+shelf_blue = [115, 141, 223]
+green = [34, 139, 34]
+dark_green = [15, 150, 0]
+dark_green2 = [14, 135, 0]
+beach = [238, 214, 175]
+beach2 = [238, 205, 149]
+snow = [250, 250, 250]
+snow2 = [226, 226, 226]
+mountain = [139, 137, 137]
+mountain2 = [129, 128, 128]
+
+# Forest colors
+dirt = [66, 36, 0]
+dark_brown = [56, 33, 0]
+forest_green = [14, 117, 0]
+forest_dark_green = [7, 56, 0]
+super_green = [0, 48, 11]
+gray = [46, 46, 46]
+black = [0, 0, 0]
