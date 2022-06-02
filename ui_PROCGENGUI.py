@@ -2,20 +2,21 @@
 
 ################################################################################
 ## Form generated from reading UI file 'PROCGENGUICYdHbF.ui'
-##
+## Benjamin Fuller
 ## Created by: Qt User Interface Compiler version 5.15.5
-##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 from PySide2 import QtCore
 from PySide2.QtCore import *  # type: ignore
 from PySide2.QtGui import *  # type: ignore
 from PySide2.QtWidgets import *  # type: ignore
+from functools import partial
 import procgenmaps as pgm
 
 
 class Ui_PROCGEN(object):
     def __init__(self):
+        super().__init__()
         self.biome = "Islands"
         self.scale = "50"
         self.shape = "400x400"
@@ -107,7 +108,7 @@ class Ui_PROCGEN(object):
         self.biomes_label.setAlignment(Qt.AlignCenter)
         self.generate_button = QPushButton(self.ui_frame)
         # Generate map with selected combobox values upon click
-        self.generate_button.clicked.connect(self.on_generation_click(self.biome, self.scale, self.shape, self.octaves))
+        self.generate_button.clicked.connect(partial(self.on_generation_click, self.biome, self.scale, self.shape, self.octaves))
         self.generate_button.setObjectName(u"generate_button")
         self.generate_button.setGeometry(QRect(190, 310, 113, 32))
         self.reset_button = QPushButton(self.ui_frame)
@@ -127,9 +128,6 @@ class Ui_PROCGEN(object):
         self.comboBox_biomes.setGeometry(QRect(190, 70, 111, 41))
         self.comboBox_shape = QComboBox(self.ui_frame)
         self.comboBox_shape.activated[str].connect(self.on_shape_click)
-        self.comboBox_shape.addItem("")
-        self.comboBox_shape.addItem("")
-        self.comboBox_shape.addItem("")
         self.comboBox_shape.addItem("")
         self.comboBox_shape.addItem("")
         self.comboBox_shape.addItem("")
@@ -197,9 +195,6 @@ class Ui_PROCGEN(object):
         self.comboBox_shape.setItemText(0, QCoreApplication.translate("PROCGEN", u"400x400", None))
         self.comboBox_shape.setItemText(1, QCoreApplication.translate("PROCGEN", u"600x600", None))
         self.comboBox_shape.setItemText(2, QCoreApplication.translate("PROCGEN", u"800x800", None))
-        self.comboBox_shape.setItemText(3, QCoreApplication.translate("PROCGEN", u"1000x1000", None))
-        self.comboBox_shape.setItemText(4, QCoreApplication.translate("PROCGEN", u"1200x1200", None))
-        self.comboBox_shape.setItemText(5, QCoreApplication.translate("PROCGEN", u"400x1200", None))
 
         self.comboBox_scale.setItemText(0, QCoreApplication.translate("PROCGEN", u"50", None))
         self.comboBox_scale.setItemText(1, QCoreApplication.translate("PROCGEN", u"100", None))
@@ -230,16 +225,17 @@ class Ui_PROCGEN(object):
     # retranslateUi
 
     def on_biomes_click(self):
-        biome = self.comboBox_biomes.currentText()
+        self.biome = self.comboBox_biomes.currentText()
 
     def on_octaves_click(self):
-        octaves = self.comboBox_4.currentText()
+        self.octaves = self.comboBox_4.currentText()
 
     def on_shape_click(self):
-        shape = self.comboBox_shape.currentText()
+        self.shape = self.comboBox_shape.currentText()
 
     def on_scale_click(self):
-        scale = self.comboBox_scale.currentText()
+        self.scale = self.comboBox_scale.currentText()
 
     def on_generation_click(self, biome, scale, shape, octaves):
-        pgm.generate_map(biome, scale, shape, octaves)
+        print(self.biome, self.scale, self.shape, self.octaves)
+        pgm.generate_map(self.biome, self.scale, self.shape, self.octaves)

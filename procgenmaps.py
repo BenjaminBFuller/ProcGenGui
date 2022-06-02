@@ -12,12 +12,12 @@ scale = 250  # USER OPTIONAL: higher zoomed in factor = higher number
 octaves = 7  # USER OPTIONAL: number of layers; more layers = more detail added
 persistence = 0.5  # amplitude that each octave contributes to overall shape
 lacunarity = 2.0  # frequency of detail at each octave
-seed = np.random.randint(0, 100)
 world = np.zeros(shape)
 color_world = np.zeros(world.shape + (3,))
 
 
 def generate_base_map(shape, scale, octaves):
+    seed = np.random.randint(0, 100)
     for i in range(shape[0]):
         for j in range(shape[1]):
             world[i][j] = noise.pnoise2(i / scale,
@@ -30,12 +30,7 @@ def generate_base_map(shape, scale, octaves):
                                         base=seed)
 
 
-def add_color(world):
-    island_gen(world, color_world)
-    return color_world
-
-
-def island_gen(world, color_world):
+def island_gen():
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < 0:
@@ -94,7 +89,7 @@ def island_gen(world, color_world):
                 color_world[i][j] = cs.snow
 
 
-def forest_gen(world, color_world):
+def forest_gen():
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -0.2:
@@ -141,9 +136,8 @@ def forest_gen(world, color_world):
                     color_world[i][j] = cs.forest_dark_green
 
 
-def create_img(world):
-    new_world = add_color(world)
-    color_world_uint8 = np.uint8(new_world)  # lossy conversion without this.
+def create_img():
+    color_world_uint8 = np.uint8(color_world)  # lossy conversion without this.
     imwrite('islands.png', color_world_uint8)
 
 
@@ -152,18 +146,16 @@ def open_img():
     background.show()
 
 
-def set_biome(biome):
+def set_biome(given_biome):
     biomes_dict = {
-        "Islands": island_gen(world, color_world),
-        "Forest": forest_gen(world, color_world),
+        "Islands": island_gen,
+        "Forest": forest_gen,
         # "Desert Oasis": oasis_gen,
         # "Cherry Blossom": blossom_gen,
         # "Caves": cave_gen,
         # "Terrace": terrace_gen
     }
-    add_color(world)
-    chosen_biome = biomes_dict.get(biome)
-    # chosen_biome(world, color_world)
+    biomes_dict[given_biome]()
 
 
 def set_scale(given_scale):
@@ -180,19 +172,16 @@ def set_scale(given_scale):
         "900": 900,
         "1000": 1000
     }
-    scale = scale_dict.get(given_scale)
+    return scale_dict.get(given_scale)
 
 
 def set_shape(given_shape):
     shape_dict = {
         "400x400": (400, 400),
         "600x600": (600, 600),
-        "800x800": (800, 800),
-        "1000x1000": (1000, 1000),
-        "1200x1200": (1200, 1200),
-        "400x1200": (400, 1200)
+        "800x800": (800, 800)
     }
-    shape = shape_dict.get(given_shape)
+    return shape_dict.get(given_shape)
 
 
 def set_octaves(given_octaves):
@@ -208,42 +197,18 @@ def set_octaves(given_octaves):
         "9": 9,
         "10": 10
     }
-    octaves = octaves_dict.get(given_octaves)
+    return octaves_dict.get(given_octaves)
 
 
 def generate_map(given_biome, given_scale, given_shape, given_octaves):
-    set_biome(given_biome)
-    set_scale(given_scale)
-    set_shape(given_shape)
-    set_octaves(given_octaves)
+    scale = set_scale(given_scale)
+    shape = set_shape(given_shape)
+    octaves = set_octaves(given_octaves)
     generate_base_map(shape, scale, octaves)
-    add_color(world)
-    create_img(world)
+    set_biome(given_biome)
+    create_img()
     open_img()
 
-# my_dpi = 100  # set screen dots per inch
 
-# grid = plt.figure(figsize=(float(background.size[0]) / my_dpi, float(background.size[1]) / my_dpi), dpi=my_dpi)
-# ax = grid.add_subplot(111)
-
-# grid.subplots_adjust(left=0, right=1, bottom=0, top=1)
-
-# myInterval = 50  # USER OPTIONAL: each grid plot will be (myInterval x myInterval) pixels
-# a = plticker.MultipleLocator(base=myInterval)
-# ax.xaxis.set_major_locator(a)
-# ax.yaxis.set_major_locator(a)
-
-# Adds grid to image with set values
-# USER OPTIONAL: linewidth = line thickness
-# ax.grid(which='major', axis='both', linestyle='-', color='black', linewidth=1)
-
-# ax.imshow(background)
-
-# grid.savefig('islands_grid.png', dpi=my_dpi)
-
-# im = Image.open('islands_grid.png')
-# im.show()
-
-
-# if __name__ == "__main__":
-#   generate_map()
+if __name__ == "__main__":
+    set_biome("Islands")
