@@ -8,7 +8,7 @@ from PySide2.QtWidgets import *
 from ui_PROCGENGUI import Ui_PROCGEN
 
 # Won't open on OS X Big Sur and newer without this
-os.environ['QT_MAC_WANTS_LAYER'] = '1'
+os.environ["QT_MAC_WANTS_LAYER"] = "1"
 
 
 class MainGUI(QMainWindow):
