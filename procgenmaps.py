@@ -12,10 +12,6 @@ persistence = 0.5  # amplitude that each octave contributes to overall shape
 lacunarity = 2.0  # frequency of detail at each octave
 
 
-# world = np.zeros(shape)
-# color_world = np.zeros(world.shape + (3,))
-
-
 def generate_base_map(shape, scale, octaves, world):
     seed = np.random.randint(0, 100)
     for i in range(shape[0]):
@@ -95,37 +91,37 @@ def island_gen(shape, world, color_world):
 def forest_gen(shape, world, color_world):
     for i in range(shape[0]):
         for j in range(shape[1]):
-            if world[i][j] < -0.2:
+            if world[i][j] < -0.1:
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.super_green
                 elif random_int == 1:
                     color_world[i][j] = cs.forest_dark_green
-            elif world[i][j] < -0.1:
+            elif world[i][j] < -0.05:
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.forest_dark_green
                 elif random_int == 1:
                     color_world[i][j] = cs.forest_green
-            elif world[i][j] < -0.05:
+            elif world[i][j] < -0.025:
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.dirt
                 elif random_int == 1:
                     color_world[i][j] = cs.dark_brown
-            elif world[i][j] < 0:
+            elif world[i][j] < 0.025:
                 random_int = random.randint(0, 1)
                 if random_int == 0:
-                    color_world[i][j] = cs.gray
-                elif random_int == 1:
                     color_world[i][j] = cs.black
+                elif random_int == 1:
+                    color_world[i][j] = cs.dark_brown
             elif world[i][j] < 0.05:
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.dirt
                 elif random_int == 1:
                     color_world[i][j] = cs.dark_brown
-            elif world[i][j] < 0.15:
+            elif world[i][j] < 0.1:
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.forest_dark_green
@@ -137,6 +133,35 @@ def forest_gen(shape, world, color_world):
                     color_world[i][j] = cs.super_green
                 elif random_int == 1:
                     color_world[i][j] = cs.forest_dark_green
+
+
+def oasis_gen(shape, world, color_world):
+    for i in range(shape[0]):
+        for j in range(shape[1]):
+            return None
+
+
+def blossom_gen(shape, world, color_world):
+    for i in range(shape[0]):
+        for j in range(shape[1]):
+            return None
+
+
+def cave_gen(shape, world, color_world):
+    for i in range(shape[0]):
+        for j in range(shape[1]):
+            if world[i][j] < -0.05:
+                color_world[i][j] = cs.black
+            elif world[i][j] < .3:
+                color_world[i][j] = cs.cave_gray
+            elif world[i][j] < 1:
+                color_world[i][j] = cs.lava
+
+
+def terrace_gen(shape, world, color_world):
+    for i in range(shape[0]):
+        for j in range(shape[1]):
+            return None
 
 
 def cloud_gen(shape, world, color_world):
@@ -159,6 +184,7 @@ def cloud_gen(shape, world, color_world):
             elif world[i][j] < 1.0:
                 color_world[i][j] = cs.cloud
 
+
 def create_img(color_world):
     # converts float6 to uint8 to prevent lossy conversion
     color_world_uint8 = np.uint8(color_world)
@@ -175,10 +201,10 @@ def set_biome(given_biome, shape, world, color_world):
     biomes_dict = {
         "Islands": island_gen,
         "Forest": forest_gen,
-        # "Desert Oasis": oasis_gen,
-        # "Cherry Blossom": blossom_gen,
-        # "Caves": cave_gen,
-        # "Terrace": terrace_gen
+        "Desert Oasis": oasis_gen,
+        "Cherry Blossom": blossom_gen,
+        "Caves": cave_gen,
+        "Terrace": terrace_gen,
         "Clouds": cloud_gen
     }
     return biomes_dict[given_biome](shape, world, color_world)
