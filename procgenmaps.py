@@ -1,7 +1,5 @@
 import noise
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.ticker as plticker
 from PIL import Image
 from imageio import imwrite
 import random
@@ -141,11 +139,31 @@ def forest_gen(shape, world, color_world):
                     color_world[i][j] = cs.forest_dark_green
 
 
+def cloud_gen(shape, world, color_world):
+    for i in range(shape[0]):
+        for j in range(shape[1]):
+            if world[i][j] < 0.1:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.sky
+                elif random_int == 1:
+                    color_world[i][j] = cs.sky_2
+            elif world[i][j] < 0.11:
+                color_world[i][j] = cs.cloud_5
+            elif world[i][j] < 0.125:
+                color_world[i][j] = cs.cloud_4
+            elif world[i][j] < 0.14:
+                color_world[i][j] = cs.cloud_3
+            elif world[i][j] < 0.155:
+                color_world[i][j] = cs.cloud_2
+            elif world[i][j] < 1.0:
+                color_world[i][j] = cs.cloud
+
 def create_img(color_world):
     # converts float6 to uint8 to prevent lossy conversion
-    # color_world_uint8 = np.uint8(color_world)
-    # imwrite("map_gen_img.png", color_world_uint8)
-    imwrite("map_gen_img.png", color_world)
+    color_world_uint8 = np.uint8(color_world)
+    imwrite("map_gen_img.png", color_world_uint8)
+    # imwrite("map_gen_img.png", color_world)
 
 
 def open_img():
@@ -156,11 +174,12 @@ def open_img():
 def set_biome(given_biome, shape, world, color_world):
     biomes_dict = {
         "Islands": island_gen,
-        "Forest": forest_gen
+        "Forest": forest_gen,
         # "Desert Oasis": oasis_gen,
         # "Cherry Blossom": blossom_gen,
         # "Caves": cave_gen,
         # "Terrace": terrace_gen
+        "Clouds": cloud_gen
     }
     return biomes_dict[given_biome](shape, world, color_world)
 
