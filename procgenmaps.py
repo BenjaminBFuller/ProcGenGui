@@ -167,19 +167,29 @@ def terrace_gen(shape, world, color_world):
 def cloud_gen(shape, world, color_world):
     for i in range(shape[0]):
         for j in range(shape[1]):
-            if world[i][j] < 0.1:
+            if world[i][j] < -0.205:
+                color_world[i][j] = cs.cloud
+            elif world[i][j] < -0.19:
+                color_world[i][j] = cs.cloud_2
+            elif world[i][j] < -0.175:
+                color_world[i][j] = cs.cloud_3
+            elif world[i][j] < -0.16:
+                color_world[i][j] = cs.cloud_4
+            elif world[i][j] < -0.15:
+                color_world[i][j] = cs.cloud_5
+            elif world[i][j] < 0.15:
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.sky
                 elif random_int == 1:
                     color_world[i][j] = cs.sky_2
-            elif world[i][j] < 0.11:
+            elif world[i][j] < 0.16:
                 color_world[i][j] = cs.cloud_5
-            elif world[i][j] < 0.125:
+            elif world[i][j] < 0.175:
                 color_world[i][j] = cs.cloud_4
-            elif world[i][j] < 0.14:
+            elif world[i][j] < 0.19:
                 color_world[i][j] = cs.cloud_3
-            elif world[i][j] < 0.155:
+            elif world[i][j] < 0.205:
                 color_world[i][j] = cs.cloud_2
             elif world[i][j] < 1.0:
                 color_world[i][j] = cs.cloud
