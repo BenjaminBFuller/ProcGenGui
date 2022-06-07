@@ -138,7 +138,40 @@ def forest_gen(shape, world, color_world):
 def oasis_gen(shape, world, color_world):
     for i in range(shape[0]):
         for j in range(shape[1]):
-            return None
+            if world[i][j] < -0.3:
+                color_world[i][j] = cs.sandstone
+            elif world[i][j] < -0.15:
+                rand_int = random.randint(0, 5)
+                if rand_int == 0:
+                    color_world[i][j] = cs.sand
+                else:
+                    color_world[i][j] = cs.sandstone
+            elif world[i][j] < -0.1:
+                rand_int = random.randint(0, 1)
+                if rand_int == 0:
+                    color_world[i][j] = cs.sandstone
+                else:
+                    color_world[i][j] = cs.sand
+            elif world[i][j] < 0:
+                rand_int = random.randint(0, 3)
+                if rand_int == 0:
+                    color_world[i][j] = cs.sandstone
+                else:
+                    color_world[i][j] = cs.sand
+            elif world[i][j] < 0.1:
+                color_world[i][j] = cs.sand
+            elif world[i][j] < 0.14:
+                rand_int = random.randint(0, 3)
+                if rand_int == 0:
+                    color_world[i][j] = cs.sandstone
+                else:
+                    color_world[i][j] = cs.sand
+            elif world[i][j] < 0.16:
+                color_world[i][j] = cs.sandstone
+            elif world[i][j] < 0.2:
+                color_world[i][j] = cs.oasis_green
+            elif world[i][j] < 1.0:
+                color_world[i][j] = cs.water
 
 
 def blossom_gen(shape, world, color_world):

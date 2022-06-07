@@ -33,6 +33,12 @@ cloud_3 = [171, 171, 171]
 cloud_4 = [144, 144, 144]
 cloud_5 = [116, 116, 116]
 
+# Oasis colors
+sand = [255, 240, 194]
+sandstone = [204, 192, 157]
+oasis_green = [120, 143, 86]
+water = [145, 237, 242]
+
 # Terrace colors
 light_green = [0, 255, 27]
 terr_green = [0, 227, 24]
