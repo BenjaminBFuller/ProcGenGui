@@ -161,7 +161,116 @@ def cave_gen(shape, world, color_world):
 def terrace_gen(shape, world, color_world):
     for i in range(shape[0]):
         for j in range(shape[1]):
-            return None
+            if world[i][j] < -.30:
+                random_int = random.randint(0, 2)
+                if random_int == 0:
+                    color_world[i][j] = cs.spring
+                else:
+                    color_world[i][j] = cs.terr_dark_green
+            elif world[i][j] < -.28:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.terr_dirt
+                else:
+                    color_world[i][j] = cs.tan
+            elif world[i][j] < -.22:
+                random_int = random.randint(0, 2)
+                if random_int == 0:
+                    color_world[i][j] = cs.spring
+                else:
+                    color_world[i][j] = cs.terr_green
+            elif world[i][j] < -.2:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.terr_dirt
+                else:
+                    color_world[i][j] = cs.tan
+            elif world[i][j] < -.14:
+                random_int = random.randint(0, 2)
+                if random_int == 0:
+                    color_world[i][j] = cs.spring
+                else:
+                    color_world[i][j] = cs.light_green
+            elif world[i][j] < -.12:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.terr_dirt
+                else:
+                    color_world[i][j] = cs.tan
+            elif world[i][j] < -.07:
+                color_world[i][j] = cs.river
+            elif world[i][j] < -.05:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.terr_dirt
+                else:
+                    color_world[i][j] = cs.tan
+            elif world[i][j] < .01:
+                random_int = random.randint(0, 2)
+                if random_int == 0:
+                    color_world[i][j] = cs.spring
+                else:
+                    color_world[i][j] = cs.light_green
+            elif world[i][j] < .03:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.terr_dirt
+                else:
+                    color_world[i][j] = cs.tan
+            elif world[i][j] < .09:
+                random_int = random.randint(0, 2)
+                if random_int == 0:
+                    color_world[i][j] = cs.spring
+                else:
+                    color_world[i][j] = cs.terr_green
+            elif world[i][j] < .11:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.terr_dirt
+                else:
+                    color_world[i][j] = cs.tan
+            elif world[i][j] < .17:
+                random_int = random.randint(0, 2)
+                if random_int == 0:
+                    color_world[i][j] = cs.spring
+                else:
+                    color_world[i][j] = cs.terr_dark_green
+            elif world[i][j] < .19:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.terr_dirt
+                else:
+                    color_world[i][j] = cs.tan
+            elif world[i][j] < .25:
+                random_int = random.randint(0, 2)
+                if random_int == 0:
+                    color_world[i][j] = cs.spring
+                else:
+                    color_world[i][j] = cs.darkest_green
+            elif world[i][j] < .27:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.terr_dirt
+                else:
+                    color_world[i][j] = cs.tan
+            elif world[i][j] < .33:
+                random_int = random.randint(0, 2)
+                if random_int == 0:
+                    color_world[i][j] = cs.spring
+                else:
+                    color_world[i][j] = cs.terr_dark_green
+            elif world[i][j] < .35:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.terr_dirt
+                else:
+                    color_world[i][j] = cs.tan
+            elif world[i][j] <= 1:
+                random_int = random.randint(0, 2)
+                if random_int == 0:
+                    color_world[i][j] = cs.spring
+                else:
+                    color_world[i][j] = cs.green
 
 
 def cloud_gen(shape, world, color_world):
@@ -214,7 +323,7 @@ def set_biome(given_biome, shape, world, color_world):
         "Desert Oasis": oasis_gen,
         "Cherry Blossom": blossom_gen,
         "Caves": cave_gen,
-        "Terrace": terrace_gen,
+        "Terraces": terrace_gen,
         "Clouds": cloud_gen
     }
     return biomes_dict[given_biome](shape, world, color_world)

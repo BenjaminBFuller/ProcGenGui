@@ -33,6 +33,16 @@ cloud_3 = [171, 171, 171]
 cloud_4 = [144, 144, 144]
 cloud_5 = [116, 116, 116]
 
+# Terrace colors
+light_green = [0, 255, 27]
+terr_green = [0, 227, 24]
+terr_dark_green = [0, 194, 20]
+darkest_green = [0, 168, 17]
+spring = [3, 252, 240]
+terr_dirt = [133, 104, 66]
+tan = [176, 149, 113]
+river = [138, 255, 237]
+
 # Cave colors
 lava = [181, 51, 7]
 white = [255, 250, 250]
