@@ -171,13 +171,50 @@ def oasis_gen(shape, world, color_world):
             elif world[i][j] < 0.2:
                 color_world[i][j] = cs.oasis_green
             elif world[i][j] < 1.0:
-                color_world[i][j] = cs.water
+                color_world[i][j] = cs.oasis_water
 
 
 def blossom_gen(shape, world, color_world):
     for i in range(shape[0]):
         for j in range(shape[1]):
-            return None
+            if world[i][j] < -0.2:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.pink
+                elif random_int == 1:
+                    color_world[i][j] = cs.light_pink
+            elif world[i][j] < -.1:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.light_pink
+                elif random_int == 1:
+                    color_world[i][j] = cs.light_yellow
+            elif world[i][j] < -.05:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.light_yellow
+                elif random_int == 1:
+                    color_world[i][j] = cs.blossom_green
+            elif world[i][j] < 0:
+                color_world[i][j] = cs.blossom_river
+            elif world[i][j] < .05:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.light_yellow
+                elif random_int == 1:
+                    color_world[i][j] = cs.blossom_green
+            elif world[i][j] < .15:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.light_pink
+                elif random_int == 1:
+                    color_world[i][j] = cs.light_yellow
+            elif world[i][j] < 1:
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.pink
+                elif random_int == 1:
+                    color_world[i][j] = cs.light_pink
 
 
 def cave_gen(shape, world, color_world):

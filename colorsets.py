@@ -33,11 +33,18 @@ cloud_3 = [171, 171, 171]
 cloud_4 = [144, 144, 144]
 cloud_5 = [116, 116, 116]
 
+# Cherry Blossom colors
+blossom_green = [0, 255, 27]
+pink = [255, 166, 233]
+light_pink = [252, 215, 247]
+light_yellow = [252, 247, 215]
+blossom_river = [138, 255, 237]
+
 # Oasis colors
 sand = [255, 240, 194]
 sandstone = [204, 192, 157]
 oasis_green = [120, 143, 86]
-water = [145, 237, 242]
+oasis_water = [145, 237, 242]
 
 # Terrace colors
 light_green = [0, 255, 27]
