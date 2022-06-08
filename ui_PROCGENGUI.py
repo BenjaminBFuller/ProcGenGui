@@ -186,6 +186,9 @@ class Ui_PROCGEN(object):
         self.title_label.setFont(font2)
         self.title_label.setStyleSheet("")
         self.title_label.setAlignment(Qt.AlignCenter)
+        self.about_button = QPushButton(self.ui_frame)
+        self.about_button.setObjectName(u"about_button")
+        self.about_button.setGeometry(QRect(340, 10, 31, 31))
 
         self.retranslateUi(PROCGEN)
 
@@ -289,7 +292,7 @@ class Ui_PROCGEN(object):
                 None,
             )
         )
-
+        self.about_button.setText(QCoreApplication.translate("PROCGEN", u"?", None))
     # retranslateUi
 
 
