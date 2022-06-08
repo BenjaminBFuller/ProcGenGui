@@ -57,7 +57,8 @@ tan = [176, 149, 113]
 river = [138, 255, 237]
 
 # Cave colors
-lava = [181, 51, 7]
+lava_red = [181, 51, 7]
+lava_orange = [252, 148, 3]
 white = [255, 250, 250]
 cave_gray = [92, 92, 92]
 water = [40, 50, 120]

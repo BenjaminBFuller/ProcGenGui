@@ -222,10 +222,14 @@ def cave_gen(shape, world, color_world):
         for j in range(shape[1]):
             if world[i][j] < -0.05:
                 color_world[i][j] = cs.black
-            elif world[i][j] < .3:
+            elif world[i][j] < .2:
                 color_world[i][j] = cs.cave_gray
             elif world[i][j] < 1:
-                color_world[i][j] = cs.lava
+                random_int = random.randint(0, 1)
+                if random_int == 0:
+                    color_world[i][j] = cs.lava_red
+                else:
+                    color_world[i][j] = cs.lava_orange
 
 
 def terrace_gen(shape, world, color_world):
