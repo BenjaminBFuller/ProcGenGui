@@ -6,12 +6,14 @@
 ## Created by: Qt User Interface Compiler version 5.15.5
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
+
 from PySide2 import QtCore
 from PySide2.QtCore import *  # type: ignore
 from PySide2.QtGui import *  # type: ignore
 from PySide2.QtWidgets import *  # type: ignore
 from functools import partial
 import procgenmaps as pgm
+from ui_AboutWindow import Ui_ABOUT
 
 
 class Ui_PROCGEN(object):
@@ -189,6 +191,7 @@ class Ui_PROCGEN(object):
         self.about_button = QPushButton(self.ui_frame)
         self.about_button.setObjectName(u"about_button")
         self.about_button.setGeometry(QRect(340, 10, 31, 31))
+        self.about_button.clicked.connect(self.on_about_click)
 
         self.retranslateUi(PROCGEN)
 
@@ -293,8 +296,8 @@ class Ui_PROCGEN(object):
             )
         )
         self.about_button.setText(QCoreApplication.translate("PROCGEN", u"?", None))
-    # retranslateUi
 
+    # retranslateUi
 
     def on_biomes_click(self):
         self.biome = self.comboBox_biomes.currentText()
@@ -311,3 +314,27 @@ class Ui_PROCGEN(object):
     def on_generation_click(self, biome, scale, shape, octaves):
         # print(self.biome, self.scale, self.shape, self.octaves)
         pgm.generate_map(self.biome, self.scale, self.shape, self.octaves)
+
+    def on_about_click(self):
+        self.w = AboutGUI()
+        self.w.show()
+
+
+class AboutGUI(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.ui = Ui_ABOUT()
+        self.ui.setupUi(self)
+        # Remove Frame & Title bar
+        self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+
+        # Drop shadow effect
+        self.shadow = QGraphicsDropShadowEffect(self)
+        self.shadow.setBlurRadius(20)
+        self.shadow.setXOffset(0)
+        self.shadow.setYOffset(0)
+        self.shadow.setColor(QColor(0, 0, 0, 60))
+        self.ui.ui_frame.setGraphicsEffect(self.shadow)
+        # Show window
+        self.show()
