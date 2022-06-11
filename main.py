@@ -37,8 +37,8 @@ class MainGUI(QMainWindow):
 class AboutGUI(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        self.ui = Ui_ABOUT()
-        self.ui.setupUi(self)
+        self.uia = Ui_ABOUT()
+        self.uia.setupUi(self)
         # Remove Frame & Title bar
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
@@ -49,16 +49,10 @@ class AboutGUI(QMainWindow):
         self.shadow.setXOffset(0)
         self.shadow.setYOffset(0)
         self.shadow.setColor(QColor(0, 0, 0, 60))
-        self.ui.ui_frame.setGraphicsEffect(self.shadow)
-
-        # hide window
-
-        self.hide()
-        self.exit_button.clicked.connect(self.hide())
+        self.ui_frame.setGraphicsEffect(self.shadow)
 
 
 if __name__ == "__main__":
     app = QApplication()
     window = MainGUI()
-    window2 = AboutGUI
     sys.exit(app.exec_())

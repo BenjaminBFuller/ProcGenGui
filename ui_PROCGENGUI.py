@@ -1,11 +1,8 @@
-# -*- coding: utf-8 -*-
+# Form generated from reading UI file 'PROCGENGUICYdHbF.ui'
+# Benjamin Fuller
+# Created by: Qt User Interface Compiler version 5.15.5
+# WARNING! All changes made in this file will be lost when recompiling UI file!
 
-################################################################################
-## Form generated from reading UI file 'PROCGENGUICYdHbF.ui'
-## Benjamin Fuller
-## Created by: Qt User Interface Compiler version 5.15.5
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
 
 from PySide2 import QtCore
 from PySide2.QtCore import *  # type: ignore
@@ -13,6 +10,7 @@ from PySide2.QtGui import *  # type: ignore
 from PySide2.QtWidgets import *  # type: ignore
 from functools import partial
 import procgenmaps as pgm
+
 # from ui_AboutWindow import Ui_ABOUT
 
 
@@ -319,6 +317,7 @@ class Ui_PROCGEN(object):
         self.w = AboutGUI()
         self.w.show()
 
+
 class Ui_ABOUT(object):
     def setupUi(self, ABOUT):
         if not ABOUT.objectName():
@@ -350,18 +349,18 @@ class Ui_ABOUT(object):
         self.ui_frame.setFont(font1)
         self.ui_frame.setCursor(QCursor(Qt.ArrowCursor))
         self.ui_frame.setStyleSheet(u"QFrame {\n"
-"	background-color: rgb(120, 200, 255);\n"
-"	color: rgb(255, 255, 255);\n"
-"	border-radius: 10px\n"
-"}")
+                                    "	background-color: rgb(120, 200, 255);\n"
+                                    "	color: rgb(255, 255, 255);\n"
+                                    "	border-radius: 10px\n"
+                                    "}")
         self.ui_frame.setFrameShape(QFrame.StyledPanel)
         self.ui_frame.setFrameShadow(QFrame.Raised)
         self.shape_frame = QFrame(self.ui_frame)
         self.shape_frame.setObjectName(u"shape_frame")
         self.shape_frame.setGeometry(QRect(300, 70, 271, 251))
         self.shape_frame.setStyleSheet(u"background-color: rgb(255, 217, 140);\n"
-"border-radius: 10px;\n"
-"color: rgb(0, 0, 0);")
+                                       "border-radius: 10px;\n"
+                                       "color: rgb(0, 0, 0);")
         self.shape_frame.setFrameShape(QFrame.StyledPanel)
         self.shape_frame.setFrameShadow(QFrame.Raised)
         self.shape_label = QLabel(self.shape_frame)
@@ -406,8 +405,8 @@ class Ui_ABOUT(object):
         self.scale_frame.setObjectName(u"scale_frame")
         self.scale_frame.setGeometry(QRect(20, 330, 271, 251))
         self.scale_frame.setStyleSheet(u"background-color: rgb(255, 217, 140);\n"
-"border-radius: 10px;\n"
-"color: rgb(0, 0, 0);")
+                                       "border-radius: 10px;\n"
+                                       "color: rgb(0, 0, 0);")
         self.scale_frame.setFrameShape(QFrame.StyledPanel)
         self.scale_frame.setFrameShadow(QFrame.Raised)
         self.scale_label = QLabel(self.scale_frame)
@@ -448,8 +447,8 @@ class Ui_ABOUT(object):
         self.octaves_frame.setObjectName(u"octaves_frame")
         self.octaves_frame.setGeometry(QRect(300, 330, 271, 251))
         self.octaves_frame.setStyleSheet(u"background-color: rgb(255, 217, 140);\n"
-"border-radius: 10px;\n"
-"color: rgb(0, 0, 0);")
+                                         "border-radius: 10px;\n"
+                                         "color: rgb(0, 0, 0);")
         self.octaves_frame.setFrameShape(QFrame.StyledPanel)
         self.octaves_frame.setFrameShadow(QFrame.Raised)
         self.octaves_label = QLabel(self.octaves_frame)
@@ -490,8 +489,8 @@ class Ui_ABOUT(object):
         self.biomes_frame.setObjectName(u"biomes_frame")
         self.biomes_frame.setGeometry(QRect(20, 70, 271, 251))
         self.biomes_frame.setStyleSheet(u"background-color: rgb(255, 217, 140);\n"
-"border-radius: 10px;\n"
-"color: rgb(0, 0, 0);")
+                                        "border-radius: 10px;\n"
+                                        "color: rgb(0, 0, 0);")
         self.biomes_frame.setFrameShape(QFrame.StyledPanel)
         self.biomes_frame.setFrameShadow(QFrame.Raised)
         self.biomes_label = QLabel(self.biomes_frame)
@@ -569,7 +568,7 @@ class Ui_ABOUT(object):
         self.exit_button = QPushButton(self.ui_frame)
         self.exit_button.setObjectName(u"exit_button")
         self.exit_button.setGeometry(QRect(20, 600, 551, 31))
-        # self.exit_button.clicked.connect(self.on_exit_click)
+        # self.exit_button.clicked.connect(self.close)
         self.title_label = QLabel(self.ui_frame)
         self.title_label.setObjectName(u"title_label")
         self.title_label.setGeometry(QRect(10, 9, 561, 51))
@@ -583,6 +582,7 @@ class Ui_ABOUT(object):
         self.retranslateAboutUi(ABOUT)
 
         QMetaObject.connectSlotsByName(ABOUT)
+
     # setupUi
 
     def retranslateAboutUi(self, ABOUT):
@@ -603,12 +603,14 @@ class Ui_ABOUT(object):
         self.octaves_label.setText(QCoreApplication.translate("ABOUT", u"OCTAVES", None))
         self.octaves_label_2.setText(QCoreApplication.translate("ABOUT", u"Select amount of layers of detail", None))
         self.octaves_label_3.setText(QCoreApplication.translate("ABOUT", u"Low octaves produce smooth,  rounded", None))
-        self.octaves_label_4.setText(QCoreApplication.translate("ABOUT", u"High octaves produce rigid,  detailed", None))
+        self.octaves_label_4.setText(
+            QCoreApplication.translate("ABOUT", u"High octaves produce rigid,  detailed", None))
         self.octaves_label_5.setText("")
         self.octaves_label_6.setText("")
         self.biomes_label.setText(QCoreApplication.translate("ABOUT", u"BIOMES", None))
         self.biomes_label_3.setText(QCoreApplication.translate("ABOUT", u"Select the environment to generate", None))
-        self.biomes_label_4.setText(QCoreApplication.translate("ABOUT", u"Gives the generator specific parameters", None))
+        self.biomes_label_4.setText(
+            QCoreApplication.translate("ABOUT", u"Gives the generator specific parameters", None))
         self.biomes_label_5.setText(QCoreApplication.translate("ABOUT", u"and colors to mimic terrains/regions", None))
         self.biomes_label_6.setText("")
         self.biomes_label_7.setText("")
@@ -617,7 +619,9 @@ class Ui_ABOUT(object):
         self.biomes_label_10.setText("")
         self.biomes_label_11.setText("")
         self.exit_button.setText(QCoreApplication.translate("ABOUT", u"Exit", None))
-        self.title_label.setText(QCoreApplication.translate("ABOUT", u"<html><head/><body><p><span style=\" font-style:italic;\">HOW TO USE</span></p></body></html>", None))
+        self.title_label.setText(QCoreApplication.translate("ABOUT",
+                                                            u"<html><head/><body><p><span style=\" font-style:italic;\">HOW TO USE</span></p></body></html>",
+                                                            None))
     # retranslateUi
 
 
@@ -637,9 +641,5 @@ class AboutGUI(QMainWindow):
         self.shadow.setYOffset(0)
         self.shadow.setColor(QColor(0, 0, 0, 60))
         self.ui.ui_frame.setGraphicsEffect(self.shadow)
-        # Show window
-        self.hide()
 
-    def on_exit_click(self):
-        self.w = AboutGUI
-        self.w.hide()
+        self.ui.exit_button.clicked.connect(self.close)

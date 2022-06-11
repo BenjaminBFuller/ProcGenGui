@@ -261,7 +261,7 @@ class Ui_ABOUT(object):
         self.exit_button = QPushButton(self.ui_frame)
         self.exit_button.setObjectName(u"exit_button")
         self.exit_button.setGeometry(QRect(20, 600, 551, 31))
-        # self.exit_button.clicked.connect(self.on_exit_click)
+        # self.exit_button.clicked.connect(??????????????????????????????????????)
         self.title_label = QLabel(self.ui_frame)
         self.title_label.setObjectName(u"title_label")
         self.title_label.setGeometry(QRect(10, 9, 561, 51))
@@ -311,7 +311,3 @@ class Ui_ABOUT(object):
         self.exit_button.setText(QCoreApplication.translate("ABOUT", u"Exit", None))
         self.title_label.setText(QCoreApplication.translate("ABOUT", u"<html><head/><body><p><span style=\" font-style:italic;\">HOW TO USE</span></p></body></html>", None))
     # retranslateUi
-
-    def on_exit_click(self):
-        self.w = AboutGUI
-        self.w.hide()
