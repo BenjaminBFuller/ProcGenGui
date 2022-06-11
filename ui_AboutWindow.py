@@ -312,3 +312,6 @@ class Ui_ABOUT(object):
         self.title_label.setText(QCoreApplication.translate("ABOUT", u"<html><head/><body><p><span style=\" font-style:italic;\">HOW TO USE</span></p></body></html>", None))
     # retranslateUi
 
+    def on_exit_click(self):
+        self.w = AboutGUI
+        self.w.hide()
