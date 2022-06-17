@@ -49,7 +49,7 @@ class AboutGUI(QMainWindow):
         self.shadow.setXOffset(0)
         self.shadow.setYOffset(0)
         self.shadow.setColor(QColor(0, 0, 0, 60))
-        self.ui_frame.setGraphicsEffect(self.shadow)
+        self.uia.ui_frame.setGraphicsEffect(self.shadow)
 
 
 if __name__ == "__main__":

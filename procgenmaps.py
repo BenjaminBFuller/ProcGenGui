@@ -169,6 +169,12 @@ def oasis_gen(shape, world, color_world):
             elif world[i][j] < 0.16:
                 color_world[i][j] = cs.sandstone
             elif world[i][j] < 0.2:
+                rand_int = random.randint(0, 1)
+                if rand_int == 0:
+                    color_world[i][j] = cs.oasis_green
+                else:
+                    color_world[i][j] = cs.sandstone
+            elif world[i][j] < 0.21:
                 color_world[i][j] = cs.oasis_green
             elif world[i][j] < 1.0:
                 color_world[i][j] = cs.oasis_water
@@ -378,6 +384,40 @@ def cloud_gen(shape, world, color_world):
                 color_world[i][j] = cs.cloud
 
 
+def rainbow_gen(shape, world, color_world):
+    for i in range(shape[0]):
+        for j in range(shape[1]):
+            if world[i][j] < -.4:
+                color_world[i][j] = cs.violet
+            elif world[i][j] < -.3:
+                color_world[i][j] = cs.indigo
+            elif world[i][j] < -.15:
+                color_world[i][j] = cs.blue
+            elif world[i][j] < 0.0:
+                color_world[i][j] = cs.green
+            elif world[i][j] < .15:
+                color_world[i][j] = cs.yellow
+            elif world[i][j] < .3:
+                color_world[i][j] = cs.orange
+            elif world[i][j] < 1.0:
+                color_world[i][j] = cs.red
+
+
+def graylands_gen(shape, world, color_world):
+    for i in range(shape[0]):
+        for j in range(shape[1]):
+            if world[i][j] < -.15:
+                color_world[i][j] = cs.black
+            elif world[i][j] < 0:
+                color_world[i][j] = cs.dark_gray
+            elif world[i][j] < .15:
+                color_world[i][j] = cs.gray
+            elif world[i][j] < .3:
+                color_world[i][j] = cs.light_gray
+            elif world[i][j] < 1.0:
+                color_world[i][j] = cs.white
+
+
 def create_img(color_world):
     # converts float6 to uint8 to prevent lossy conversion
     color_world_uint8 = np.uint8(color_world)
@@ -398,7 +438,9 @@ def set_biome(given_biome, shape, world, color_world):
         "Cherry Blossom": blossom_gen,
         "Caves": cave_gen,
         "Terraces": terrace_gen,
-        "Clouds": cloud_gen
+        "Clouds": cloud_gen,
+        "Rainbow": rainbow_gen,
+        "Graylands": graylands_gen
     }
     return biomes_dict[given_biome](shape, world, color_world)
 

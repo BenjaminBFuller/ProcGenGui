@@ -139,6 +139,8 @@ class Ui_PROCGEN(object):
         self.comboBox_biomes.addItem("")
         self.comboBox_biomes.addItem("")
         self.comboBox_biomes.addItem("")
+        self.comboBox_biomes.addItem("")
+        self.comboBox_biomes.addItem("")
         self.comboBox_biomes.setObjectName("comboBox_biomes")
         self.comboBox_biomes.setGeometry(QRect(190, 70, 111, 41))
         self.comboBox_shape = QComboBox(self.ui_frame)
@@ -229,6 +231,12 @@ class Ui_PROCGEN(object):
         self.comboBox_biomes.setItemText(
             6, QCoreApplication.translate("PROCGEN", "Clouds", None)
         )
+        self.comboBox_biomes.setItemText(
+            7, QCoreApplication.translate("PROCGEN", "Rainbow", None)
+        )
+        self.comboBox_biomes.setItemText(
+            8, QCoreApplication.translate("PROCGEN", "Graylands", None)
+        )
 
         self.comboBox_shape.setItemText(
             0, QCoreApplication.translate("PROCGEN", "400x400", None)
@@ -289,7 +297,7 @@ class Ui_PROCGEN(object):
         self.title_label.setText(
             QCoreApplication.translate(
                 "PROCGEN",
-                '<html><head/><body><p><span style=" font-weight:600;">M A P G E N</span></p></body></html>',
+                '<html><head/><body><p><span style=" font-weight:600;">P R O C G E N</span></p></body></html>',
                 None,
             )
         )

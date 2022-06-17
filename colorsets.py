@@ -62,3 +62,21 @@ lava_orange = [252, 148, 3]
 white = [255, 250, 250]
 cave_gray = [92, 92, 92]
 water = [40, 50, 120]
+
+# Rainbow colors
+#white = [255, 255, 255]
+#black = [0, 0, 0]
+violet = [148, 0, 211]
+indigo = [75, 0, 130]
+#blue = [0, 0, 255]
+#green = [0, 255, 0]
+yellow = [255, 255, 0]
+orange = [255, 127, 0]
+red = [255, 0, 0]
+
+# Graylands colors
+#white = [255, 255, 255]
+#black = [0, 0, 0]
+#gray = [128, 128, 128]
+light_gray = [191, 191, 191]
+dark_gray = [64, 64, 64]
