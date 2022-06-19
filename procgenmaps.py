@@ -387,13 +387,13 @@ def cloud_gen(shape, world, color_world):
 def rainbow_gen(shape, world, color_world):
     for i in range(shape[0]):
         for j in range(shape[1]):
-            if world[i][j] < -.4:
+            if world[i][j] < -.3:
                 color_world[i][j] = cs.violet
-            elif world[i][j] < -.3:
-                color_world[i][j] = cs.indigo
             elif world[i][j] < -.15:
+                color_world[i][j] = cs.indigo
+            elif world[i][j] < -.05:
                 color_world[i][j] = cs.blue
-            elif world[i][j] < 0.0:
+            elif world[i][j] < .05:
                 color_world[i][j] = cs.green
             elif world[i][j] < .15:
                 color_world[i][j] = cs.yellow
