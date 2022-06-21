@@ -407,15 +407,15 @@ def graylands_gen(shape, world, color_world):
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -.15:
-                color_world[i][j] = cs.black
+                color_world[i][j] = cs.glblack
             elif world[i][j] < 0:
-                color_world[i][j] = cs.dark_gray
+                color_world[i][j] = cs.gldark_gray
             elif world[i][j] < .15:
-                color_world[i][j] = cs.gray
+                color_world[i][j] = cs.glgray
             elif world[i][j] < .3:
-                color_world[i][j] = cs.light_gray
+                color_world[i][j] = cs.gllight_gray
             elif world[i][j] < 1.0:
-                color_world[i][j] = cs.white
+                color_world[i][j] = cs.glwhite
 
 
 def create_img(color_world):

@@ -73,8 +73,8 @@ rborange = [255, 127, 0]
 rbred = [255, 0, 0]
 
 # Graylands colors
-#white = [255, 255, 255]
-#black = [0, 0, 0]
-#gray = [128, 128, 128]
-light_gray = [191, 191, 191]
-dark_gray = [64, 64, 64]
+glwhite = [255, 255, 255]
+glblack = [0, 0, 0]
+glgray = [128, 128, 128]
+gllight_gray = [191, 191, 191]
+gldark_gray = [64, 64, 64]
