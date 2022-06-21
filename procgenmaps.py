@@ -422,7 +422,7 @@ def create_img(color_world):
     # converts float6 to uint8 to prevent lossy conversion
     color_world_uint8 = np.uint8(color_world)
     imwrite("map_gen_img.png", color_world_uint8)
-    # imwrite("map_gen_img.png", color_world)
+    # imwrite("map_gen_img.png", color_world)å
 
 
 def open_img():
