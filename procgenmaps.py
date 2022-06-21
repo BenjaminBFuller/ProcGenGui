@@ -388,19 +388,19 @@ def rainbow_gen(shape, world, color_world):
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -.3:
-                color_world[i][j] = cs.violet
+                color_world[i][j] = cs.rbviolet
             elif world[i][j] < -.15:
-                color_world[i][j] = cs.indigo
+                color_world[i][j] = cs.rbindigo
             elif world[i][j] < -.05:
-                color_world[i][j] = cs.blue
+                color_world[i][j] = cs.rbblue
             elif world[i][j] < .05:
-                color_world[i][j] = cs.green
+                color_world[i][j] = cs.rbgreen
             elif world[i][j] < .15:
-                color_world[i][j] = cs.yellow
+                color_world[i][j] = cs.rbyellow
             elif world[i][j] < .3:
-                color_world[i][j] = cs.orange
+                color_world[i][j] = cs.rborange
             elif world[i][j] < 1.0:
-                color_world[i][j] = cs.red
+                color_world[i][j] = cs.rbred
 
 
 def graylands_gen(shape, world, color_world):

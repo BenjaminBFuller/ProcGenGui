@@ -64,15 +64,13 @@ cave_gray = [92, 92, 92]
 water = [40, 50, 120]
 
 # Rainbow colors
-#white = [255, 255, 255]
-#black = [0, 0, 0]
-violet = [148, 0, 211]
-indigo = [75, 0, 130]
-#blue = [0, 0, 255]
-#green = [0, 255, 0]
-yellow = [255, 255, 0]
-orange = [255, 127, 0]
-red = [255, 0, 0]
+rbviolet = [148, 0, 211]
+rbindigo = [75, 0, 130]
+rbblue = [0, 0, 255]
+rbgreen = [0, 255, 0]
+rbyellow = [255, 255, 0]
+rborange = [255, 127, 0]
+rbred = [255, 0, 0]
 
 # Graylands colors
 #white = [255, 255, 255]
