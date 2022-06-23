@@ -12,6 +12,7 @@ persistence = 0.5  # amplitude that each octave contributes to overall shape
 lacunarity = 2.0  # frequency of detail at each octave
 
 
+# Generates base map with no colors; strictly perlin noise generation with user inputted parameters
 def generate_base_map(shape, scale, octaves, world):
     seed = np.random.randint(0, 100)
     for i in range(shape[0]):
@@ -28,6 +29,8 @@ def generate_base_map(shape, scale, octaves, world):
             )
     return world
 
+
+# The following functions create different biomes/environments (all ending with _gen in definition name)
 
 def island_gen(shape, world, color_world):
     for i in range(shape[0]):
