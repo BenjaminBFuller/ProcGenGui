@@ -130,3 +130,7 @@ dmypy.json
 
 # UI files
 *.ui
+
+# idea files
+.idea
+
