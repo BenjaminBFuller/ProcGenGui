@@ -1,4 +1,4 @@
-import noise
+from noise import pnoise2
 import numpy as np
 from PIL import Image
 from imageio import imwrite
@@ -17,7 +17,7 @@ def generate_base_map(shape, scale, octaves, world):
     seed = np.random.randint(0, 100)
     for i in range(shape[0]):
         for j in range(shape[1]):
-            world[i][j] = noise.pnoise2(
+            world[i][j] = pnoise2(
                 i / scale,
                 j / scale,
                 octaves=octaves,
@@ -425,7 +425,7 @@ def create_img(color_world):
     # converts float6 to uint8 to prevent lossy conversion
     color_world_uint8 = np.uint8(color_world)
     imwrite("map_gen_img.png", color_world_uint8)
-    # imwrite("map_gen_img.png", color_world)å
+    # imwrite("map_gen_img.png", color_world)
 
 
 def open_img():
