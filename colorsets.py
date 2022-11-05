@@ -14,9 +14,9 @@ mountain2 = [129, 128, 128]
 
 # Forest colors
 dirt = [66, 36, 0]
-dark_brown = [56, 33, 0]
-forest_green = [14, 117, 0]
-forest_dark_green = [7, 56, 0]
+dark_brown = [59, 46, 30]
+forest_green = [75, 107, 60]
+forest_dark_green = [58, 73, 40]
 super_green = [0, 48, 11]
 gray = [46, 46, 46]
 black = [0, 0, 0]
