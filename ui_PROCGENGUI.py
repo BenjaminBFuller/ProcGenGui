@@ -11,8 +11,6 @@ from PySide2.QtWidgets import *  # type: ignore
 from functools import partial
 import procgenmaps as pgm
 
-# from ui_AboutWindow import Ui_ABOUT
-
 
 class Ui_PROCGEN(object):
     def __init__(self):
