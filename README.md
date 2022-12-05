@@ -1,4 +1,7 @@
 # ProcGenGui
+
+Built on Python 3.9. Does not run on Python 3.11!
+
 GUI for Procedurally Generated Maps
 - Create and save your own images
 - 4 unique parameters
