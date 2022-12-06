@@ -96,9 +96,9 @@ def forest_gen(shape, world, color_world):
         for j in range(shape[1]):
             if world[i][j] < -0.1:
                 random_int = random.randint(0, 1)
-                if random_int == 0:
+                if random_int != 0:
                     color_world[i][j] = cs.super_green
-                elif random_int == 1:
+                else:
                     color_world[i][j] = cs.forest_dark_green
             elif world[i][j] < -0.05:
                 random_int = random.randint(0, 1)
