@@ -190,19 +190,19 @@ def blossom_gen(shape, world, color_world):
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.pink
-                elif random_int == 1:
+                else:
                     color_world[i][j] = cs.light_pink
             elif world[i][j] < -.1:
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.light_pink
-                elif random_int == 1:
+                else:
                     color_world[i][j] = cs.light_yellow
             elif world[i][j] < -.05:
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.light_yellow
-                elif random_int == 1:
+                else:
                     color_world[i][j] = cs.blossom_green
             elif world[i][j] < 0:
                 color_world[i][j] = cs.blossom_river
@@ -210,19 +210,19 @@ def blossom_gen(shape, world, color_world):
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.light_yellow
-                elif random_int == 1:
+                else:
                     color_world[i][j] = cs.blossom_green
             elif world[i][j] < .15:
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.light_pink
-                elif random_int == 1:
+                else:
                     color_world[i][j] = cs.light_yellow
             elif world[i][j] < 1:
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.pink
-                elif random_int == 1:
+                else:
                     color_world[i][j] = cs.light_pink
 
 
@@ -373,7 +373,7 @@ def cloud_gen(shape, world, color_world):
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.sky
-                elif random_int == 1:
+                else:
                     color_world[i][j] = cs.sky_2
             elif world[i][j] < 0.16:
                 color_world[i][j] = cs.cloud_5
