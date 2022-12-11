@@ -130,12 +130,14 @@ def forest_gen(shape, world, color_world):
                     color_world[i][j] = cs.forest_dark_green
                 else:
                     color_world[i][j] = cs.forest_green
-            elif world[i][j] < 1:
+            elif world[i][j] < 0.35:
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.super_green
                 else:
                     color_world[i][j] = cs.forest_dark_green
+            elif world[i][j] < 1:
+                color_world[i][j] = cs.super_green
 
 
 def oasis_gen(shape, world, color_world):
