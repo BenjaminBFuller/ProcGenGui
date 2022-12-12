@@ -13,13 +13,13 @@ mountain = [139, 137, 137]
 mountain2 = [129, 128, 128]
 
 # Forest colors
+black = [0, 0, 0]
+gray = [46, 46, 46]
 dirt = [66, 36, 0]
 dark_brown = [59, 46, 30]
 forest_green = [0, 141, 2]
 forest_dark_green = [0, 107, 2]
 super_green = [0, 229, 4]
-gray = [46, 46, 46]
-black = [0, 0, 0]
 
 # Cloud colors
 sky = [213, 228, 236]
