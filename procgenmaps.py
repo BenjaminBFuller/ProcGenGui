@@ -92,6 +92,7 @@ def island_gen(shape, world, color_world):
 
 
 def forest_gen(shape, world, color_world):
+    """Generates forest image with given user parameters"""
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -0.1:
@@ -141,6 +142,7 @@ def forest_gen(shape, world, color_world):
 
 
 def oasis_gen(shape, world, color_world):
+    """Generates desert oasis image with given user parameters"""
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -0.3:
@@ -186,6 +188,7 @@ def oasis_gen(shape, world, color_world):
 
 
 def blossom_gen(shape, world, color_world):
+    """Generates cherry blossom forest image with given user parameters"""
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -0.2:
@@ -229,6 +232,7 @@ def blossom_gen(shape, world, color_world):
 
 
 def cave_gen(shape, world, color_world):
+    """Generates lava cave image with given user parameters"""
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -0.05:
@@ -244,6 +248,7 @@ def cave_gen(shape, world, color_world):
 
 
 def terrace_gen(shape, world, color_world):
+    """Generates rice terrace image with given user parameters"""
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -.30:
@@ -359,6 +364,7 @@ def terrace_gen(shape, world, color_world):
 
 
 def cloud_gen(shape, world, color_world):
+    """Generates cloud image with given user parameters"""
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -0.205:
@@ -390,6 +396,7 @@ def cloud_gen(shape, world, color_world):
 
 
 def rainbow_gen(shape, world, color_world):
+    """Generates rainbow land image with given user parameters"""
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -.3:
@@ -409,10 +416,11 @@ def rainbow_gen(shape, world, color_world):
 
 
 def graylands_gen(shape, world, color_world):
+    """Generates graylands image with given user parameters"""
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -.15:
-                color_world[i][j] = cs.glblack
+                color_world[i][j] = cs.black
             elif world[i][j] < 0:
                 color_world[i][j] = cs.gldark_gray
             elif world[i][j] < .15:
@@ -420,7 +428,7 @@ def graylands_gen(shape, world, color_world):
             elif world[i][j] < .3:
                 color_world[i][j] = cs.gllight_gray
             elif world[i][j] < 1.0:
-                color_world[i][j] = cs.glwhite
+                color_world[i][j] = cs.white
 
 
 def create_img(color_world):
@@ -431,6 +439,7 @@ def create_img(color_world):
 
 
 def open_img():
+    """Open image"""
     background = Image.open("map_gen_img.png")
     background.show()
 
@@ -489,6 +498,7 @@ def set_octaves(given_octaves):
 
 
 def generate_map(given_biome, given_scale, given_shape, given_octaves):
+    """Creates base map from given parameters, colors in with biome specs, creates final image"""
     scale = set_scale(given_scale)
     shape = set_shape(given_shape)
     octaves = set_octaves(given_octaves)

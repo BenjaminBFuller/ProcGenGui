@@ -1,3 +1,5 @@
+"""Color sets file to hold all color variables with rgb values"""
+
 # Island colors
 deep_blue = [59, 95, 204]
 blue = [65, 105, 225]
@@ -59,7 +61,6 @@ river = [138, 255, 237]
 # Cave colors
 lava_red = [181, 51, 7]
 lava_orange = [252, 148, 3]
-white = [255, 250, 250]
 cave_gray = [92, 92, 92]
 water = [40, 50, 120]
 
@@ -73,8 +74,7 @@ rborange = [255, 127, 0]
 rbred = [255, 0, 0]
 
 # Graylands colors
-glwhite = [255, 255, 255]
+white = [255, 255, 255]
 gllight_gray = [191, 191, 191]
 glgray = [128, 128, 128]
 gldark_gray = [64, 64, 64]
-glblack = [0, 0, 0]
