@@ -445,6 +445,7 @@ def open_img():
 
 
 def set_biome(given_biome, shape, world, color_world):
+    # Caller dispatch: A dictionary key calls its value, an encapsulated function
     biomes_dict = {
         "Islands": island_gen,
         "Forest": forest_gen,
@@ -454,8 +455,7 @@ def set_biome(given_biome, shape, world, color_world):
         "Terraces": terrace_gen,
         "Clouds": cloud_gen,
         "Rainbow": rainbow_gen,
-        "Graylands": graylands_gen
-    }
+        "Graylands": graylands_gen}
     return biomes_dict[given_biome](shape, world, color_world)
 
 
@@ -471,13 +471,15 @@ def set_scale(given_scale):
         "700": 700,
         "800": 800,
         "900": 900,
-        "1000": 1000,
-    }
+        "1000": 1000}
     return scale_dict.get(given_scale)
 
 
 def set_shape(given_shape):
-    shape_dict = {"400x400": (400, 400), "600x600": (600, 600), "800x800": (800, 800)}
+    shape_dict = {
+        "400x400": (400, 400),
+        "600x600": (600, 600),
+        "800x800": (800, 800)}
     return shape_dict.get(given_shape)
 
 
@@ -492,8 +494,7 @@ def set_octaves(given_octaves):
         "7": 7,
         "8": 8,
         "9": 9,
-        "10": 10,
-    }
+        "10": 10,}
     return octaves_dict.get(given_octaves)
 
 

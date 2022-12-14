@@ -1,4 +1,4 @@
-"""Color sets file to hold all color variables with rgb values"""
+"""Color sets file holds all color variables with rgb values"""
 
 # Island colors
 deep_blue = [59, 95, 204]
