@@ -432,6 +432,7 @@ def graylands_gen(shape, world, color_world):
 
 
 def create_img(color_world):
+    """Converts image data and writes to png file in the directory"""
     # converts float6 to uint8 to prevent lossy conversion
     color_world_uint8 = np.uint8(color_world)
     imwrite("map_gen_img.png", color_world_uint8)
@@ -439,7 +440,7 @@ def create_img(color_world):
 
 
 def open_img():
-    """Open image"""
+    """Open and display image on screen"""
     background = Image.open("map_gen_img.png")
     background.show()
 
@@ -460,6 +461,7 @@ def set_biome(given_biome, shape, world, color_world):
 
 
 def set_scale(given_scale):
+    """Sets scale for generation based on user input"""
     scale_dict = {
         "50": 50,
         "100": 100,
@@ -476,6 +478,7 @@ def set_scale(given_scale):
 
 
 def set_shape(given_shape):
+    """Sets shape of image based on user input"""
     shape_dict = {
         "400x400": (400, 400),
         "600x600": (600, 600),
@@ -484,6 +487,7 @@ def set_shape(given_shape):
 
 
 def set_octaves(given_octaves):
+    """Sets octaves of generation based on user input"""
     octaves_dict = {
         "1": 1,
         "2": 2,
@@ -494,7 +498,7 @@ def set_octaves(given_octaves):
         "7": 7,
         "8": 8,
         "9": 9,
-        "10": 10,}
+        "10": 10}
     return octaves_dict.get(given_octaves)
 
 
@@ -510,6 +514,3 @@ def generate_map(given_biome, given_scale, given_shape, given_octaves):
     set_biome(given_biome, shape, world, color_world)
     create_img(color_world)
     open_img()
-
-# if __name__ == "__main__":
-#     set_biome("Islands")
