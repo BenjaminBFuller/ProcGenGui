@@ -38,6 +38,7 @@ class AboutGUI(QMainWindow):
         QMainWindow.__init__(self)
         self.uia = Ui_ABOUT()
         self.uia.setupUi(self)
+
         # Remove Frame & Title bar
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)

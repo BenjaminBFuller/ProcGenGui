@@ -12,8 +12,8 @@ persistence = 0.5  # amplitude that each octave contributes to overall shape
 lacunarity = 2.0  # frequency of detail at each octave
 
 
-# Generates base map with no colors; strictly perlin noise generation with user inputted parameters
 def generate_base_map(shape, scale, octaves, world):
+    """Generates base map; perlin noise generation with user inputted parameters"""
     seed = np.random.randint(0, 100)
     for i in range(shape[0]):
         for j in range(shape[1]):
@@ -33,6 +33,8 @@ def generate_base_map(shape, scale, octaves, world):
 # The following functions create different biomes/environments (all ending with _gen in definition name)
 
 def island_gen(shape, world, color_world):
+    """Generates ocean islands image with given user parameters"""
+    # Fills 2d array color_world with given colors based on perlin noise algorithm output values
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < 0:
@@ -93,6 +95,7 @@ def island_gen(shape, world, color_world):
 
 def forest_gen(shape, world, color_world):
     """Generates forest image with given user parameters"""
+    # Fills 2d array color_world with given colors based on perlin noise algorithm output values
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -0.1:
@@ -143,6 +146,7 @@ def forest_gen(shape, world, color_world):
 
 def oasis_gen(shape, world, color_world):
     """Generates desert oasis image with given user parameters"""
+    # Fills 2d array color_world with given colors based on perlin noise algorithm output values
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -0.3:
@@ -189,6 +193,7 @@ def oasis_gen(shape, world, color_world):
 
 def blossom_gen(shape, world, color_world):
     """Generates cherry blossom forest image with given user parameters"""
+    # Fills 2d array color_world with given colors based on perlin noise algorithm output values
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -0.2:
@@ -233,6 +238,7 @@ def blossom_gen(shape, world, color_world):
 
 def cave_gen(shape, world, color_world):
     """Generates lava cave image with given user parameters"""
+    # Fills 2d array color_world with given colors based on perlin noise algorithm output values
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -0.05:
@@ -249,6 +255,7 @@ def cave_gen(shape, world, color_world):
 
 def terrace_gen(shape, world, color_world):
     """Generates rice terrace image with given user parameters"""
+    # Fills 2d array color_world with given colors based on perlin noise algorithm output values
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -.30:
@@ -365,6 +372,7 @@ def terrace_gen(shape, world, color_world):
 
 def cloud_gen(shape, world, color_world):
     """Generates cloud image with given user parameters"""
+    # Fills 2d array color_world with given colors based on perlin noise algorithm output values
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -0.205:
@@ -397,6 +405,7 @@ def cloud_gen(shape, world, color_world):
 
 def rainbow_gen(shape, world, color_world):
     """Generates rainbow land image with given user parameters"""
+    # Fills 2d array color_world with given colors based on perlin noise algorithm output values
     for i in range(shape[0]):
         for j in range(shape[1]):
             if world[i][j] < -.3:
@@ -488,6 +497,7 @@ def set_shape(given_shape):
 
 def set_octaves(given_octaves):
     """Sets octaves of generation based on user input"""
+    # Map user given octaves parameter to int values
     octaves_dict = {
         "1": 1,
         "2": 2,
@@ -510,7 +520,10 @@ def generate_map(given_biome, given_scale, given_shape, given_octaves):
     world = np.zeros(shape)
     generate_base_map(shape, scale, octaves, world)
     color_world = np.zeros(world.shape + (3,))
+
+    # Test function: prints given biome in console for test purposes
     print(given_biome)
+
     set_biome(given_biome, shape, world, color_world)
     create_img(color_world)
     open_img()
