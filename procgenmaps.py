@@ -455,6 +455,7 @@ def open_img():
 
 
 def set_biome(given_biome, shape, world, color_world):
+    """Sets biome/terrain/colors for generation based on user input"""
     # Caller dispatch: A dictionary key calls its value, an encapsulated function
     biomes_dict = {
         "Islands": island_gen,
