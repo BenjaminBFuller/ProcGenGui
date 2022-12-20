@@ -1,3 +1,5 @@
+# Procedural generation python file for generating images from GUI inputs
+
 from noise import pnoise2
 import numpy as np
 from PIL import Image
