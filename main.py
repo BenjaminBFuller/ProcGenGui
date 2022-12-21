@@ -13,6 +13,7 @@ os.environ["QT_MAC_WANTS_LAYER"] = "1"
 
 class MainGUI(QMainWindow):
     def __init__(self):
+        """Initializes main window"""
         QMainWindow.__init__(self)
         self.ui = Ui_PROCGEN()
         self.ui.setupUi(self)
@@ -35,6 +36,7 @@ class MainGUI(QMainWindow):
 
 class AboutGUI(QMainWindow):
     def __init__(self):
+        """Initializes about window"""
         QMainWindow.__init__(self)
         self.uia = Ui_ABOUT()
         self.uia.setupUi(self)
@@ -53,6 +55,7 @@ class AboutGUI(QMainWindow):
 
 
 if __name__ == "__main__":
+    # Deploy app, open the main window, wait for system exit while running
     app = QApplication()
     window = MainGUI()
     sys.exit(app.exec_())
