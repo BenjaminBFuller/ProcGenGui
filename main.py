@@ -1,3 +1,8 @@
+# Main.py
+# Runs helper files to launch main window GUI
+# In the main GUI contains the "About" window option and generation options
+# Generating an image utilizes procgenmaps.py to procedural generate terrains with given user parameters
+
 import sys
 import os
 from PySide2 import QtCore
