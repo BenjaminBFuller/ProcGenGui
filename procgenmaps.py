@@ -91,7 +91,7 @@ def island_gen(shape, world, color_world):
                     color_world[i][j] = cs.snow
                 else:
                     color_world[i][j] = cs.snow2
-            elif world[i][j] < 1.0:
+            elif world[i][j] <= 1.0:
                 color_world[i][j] = cs.snow
 
 
@@ -142,7 +142,7 @@ def forest_gen(shape, world, color_world):
                     color_world[i][j] = cs.super_green
                 else:
                     color_world[i][j] = cs.forest_dark_green
-            elif world[i][j] < 1:
+            elif world[i][j] <= 1:
                 color_world[i][j] = cs.super_green
 
 
@@ -189,7 +189,7 @@ def oasis_gen(shape, world, color_world):
                     color_world[i][j] = cs.sandstone
             elif world[i][j] < 0.21:
                 color_world[i][j] = cs.oasis_green
-            elif world[i][j] < 1.0:
+            elif world[i][j] <= 1.0:
                 color_world[i][j] = cs.oasis_water
 
 
@@ -230,7 +230,7 @@ def blossom_gen(shape, world, color_world):
                     color_world[i][j] = cs.light_pink
                 else:
                     color_world[i][j] = cs.light_yellow
-            elif world[i][j] < 1:
+            elif world[i][j] <= 1:
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.pink
@@ -247,7 +247,7 @@ def cave_gen(shape, world, color_world):
                 color_world[i][j] = cs.black
             elif world[i][j] < .2:
                 color_world[i][j] = cs.cave_gray
-            elif world[i][j] < 1:
+            elif world[i][j] <= 1:
                 random_int = random.randint(0, 1)
                 if random_int == 0:
                     color_world[i][j] = cs.lava_red
@@ -401,7 +401,7 @@ def cloud_gen(shape, world, color_world):
                 color_world[i][j] = cs.cloud_3
             elif world[i][j] < 0.205:
                 color_world[i][j] = cs.cloud_2
-            elif world[i][j] < 1.0:
+            elif world[i][j] <= 1.0:
                 color_world[i][j] = cs.cloud
 
 
