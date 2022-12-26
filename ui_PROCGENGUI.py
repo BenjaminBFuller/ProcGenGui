@@ -4,6 +4,7 @@
 # WARNING! All changes made in this file will be lost when recompiling UI file!
 
 
+# imports
 from PySide2 import QtCore
 from PySide2.QtCore import *  # type: ignore
 from PySide2.QtGui import *  # type: ignore
