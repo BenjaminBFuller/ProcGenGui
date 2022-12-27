@@ -14,6 +14,7 @@ import procgenmaps as pgm
 
 
 class Ui_PROCGEN(object):
+    # initialize super object and base (lowest/1st) settings for generation on UI window comboboxes
     def __init__(self):
         super().__init__()
         self.biome = "Islands"
