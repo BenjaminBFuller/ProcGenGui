@@ -22,6 +22,7 @@ class Ui_PROCGEN(object):
         self.shape = "400x400"
         self.octaves = "1"
 
+    # QT Designer generated code for UI structure
     def setupUi(self, PROCGEN):
         if not PROCGEN.objectName():
             PROCGEN.setObjectName("PROCGEN")
