@@ -198,7 +198,7 @@ class Ui_PROCGEN(object):
 
         QMetaObject.connectSlotsByName(PROCGEN)
 
-    # setupUi
+    # add labels throughout (Titles, combo box elements,...) after UI generation
     def retranslateProcgenUi(self, PROCGEN):
         PROCGEN.setWindowTitle(QCoreApplication.translate("PROCGEN", "PROCGEN", None))
         self.shape_label.setText(QCoreApplication.translate("PROCGEN", "SHAPE", None))
