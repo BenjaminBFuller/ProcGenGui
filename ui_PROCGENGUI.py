@@ -304,8 +304,7 @@ class Ui_PROCGEN(object):
         )
         self.about_button.setText(QCoreApplication.translate("PROCGEN", u"?", None))
 
-    # retranslateUi
-
+    # Click functions: update variables on click with given user parameters
     def on_biomes_click(self):
         self.biome = self.comboBox_biomes.currentText()
 
