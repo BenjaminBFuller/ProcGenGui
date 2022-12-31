@@ -326,6 +326,7 @@ class Ui_PROCGEN(object):
         self.w.show()
 
 
+# About window generation and setup with QT Designer
 class Ui_ABOUT(object):
     def setupUi(self, ABOUT):
         if not ABOUT.objectName():
