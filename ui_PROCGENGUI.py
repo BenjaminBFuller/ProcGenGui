@@ -634,6 +634,7 @@ class Ui_ABOUT(object):
     # retranslateUi
 
 
+# Child class / Subclass to inherit and modify UI
 class AboutGUI(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
