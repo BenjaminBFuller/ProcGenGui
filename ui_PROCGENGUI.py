@@ -652,4 +652,5 @@ class AboutGUI(QMainWindow):
         self.shadow.setColor(QColor(0, 0, 0, 60))
         self.ui.ui_frame.setGraphicsEffect(self.shadow)
 
+        # Close button on click
         self.ui.exit_button.clicked.connect(self.close)
