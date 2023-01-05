@@ -1,6 +1,6 @@
 # ProcGenGui
 
-Built on Python 3.9. Does not run on Python 3.11!
+Built on Python 3.9. Currently incompatible with 3.11 (JAN 2023)
 
 GUI for Procedurally Generated Maps
 - Create and save your own images
