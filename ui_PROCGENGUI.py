@@ -636,6 +636,10 @@ class Ui_ABOUT(object):
 
 # Child class / Subclass to inherit and modify UI
 class AboutGUI(QMainWindow):
+    """
+    Initialize and setup About window
+    Removes window frame, adds drop shadow effect, and include close button
+    """
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_ABOUT()
