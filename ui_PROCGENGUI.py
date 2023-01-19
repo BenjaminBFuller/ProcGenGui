@@ -14,16 +14,22 @@ import procgenmaps as pgm
 
 
 class Ui_PROCGEN(object):
-    # initialize super object and base (lowest/1st) settings for generation on UI window comboboxes
     def __init__(self):
+        """
+        initialize super object and base (lowest/1st) settings for generation on UI window comboboxes
+        """
         super().__init__()
         self.biome = "Islands"
         self.scale = "50"
         self.shape = "400x400"
         self.octaves = "1"
 
-    # QT Designer generated code for UI structure
     def setupUi(self, PROCGEN):
+        """
+        QT Designer generated code for UI structure
+        :param PROCGEN:
+        :return:
+        """
         if not PROCGEN.objectName():
             PROCGEN.setObjectName("PROCGEN")
         PROCGEN.resize(400, 400)
@@ -198,8 +204,12 @@ class Ui_PROCGEN(object):
 
         QMetaObject.connectSlotsByName(PROCGEN)
 
-    # add labels throughout (Titles, combo box elements,...) after UI generation
     def retranslateProcgenUi(self, PROCGEN):
+        """
+        Add labels throughout (Titles, combo box elements,...) after UI generation
+        :param PROCGEN:
+        :return:
+        """
         PROCGEN.setWindowTitle(QCoreApplication.translate("PROCGEN", "PROCGEN", None))
         self.shape_label.setText(QCoreApplication.translate("PROCGEN", "SHAPE", None))
         self.scale_label.setText(QCoreApplication.translate("PROCGEN", "SCALE", None))
@@ -326,8 +336,10 @@ class Ui_PROCGEN(object):
         self.w.show()
 
 
-# About window generation and setup with QT Designer
 class Ui_ABOUT(object):
+    """
+    About window generation and setup with QT Designer
+    """
     def setupUi(self, ABOUT):
         if not ABOUT.objectName():
             ABOUT.setObjectName(u"ABOUT")
