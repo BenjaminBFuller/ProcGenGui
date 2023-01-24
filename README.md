@@ -9,7 +9,7 @@ GUI for Procedurally Generated Maps
   - 9 different biomes
   - 3 image sizes
   - A large range of scale factor
-  - Up to 10 layers of detail
+  - Up to 10 layers of generation detail
 - Easy and compact user interface
 - Info button for detailed descriptions
 
