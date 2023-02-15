@@ -328,6 +328,15 @@ class Ui_PROCGEN(object):
         self.scale = self.comboBox_scale.currentText()
 
     def on_generation_click(self, biome, scale, shape, octaves):
+        """
+        Generates and displays map from user parameters in combo boxes.
+
+        :param biome: string
+        :param scale: integer
+        :param shape: tuple
+        :param octaves: integer
+        :return:
+        """
         # print(self.biome, self.scale, self.shape, self.octaves)
         pgm.generate_map(self.biome, self.scale, self.shape, self.octaves)
 
