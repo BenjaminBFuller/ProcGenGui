@@ -616,6 +616,12 @@ class Ui_ABOUT(object):
     # setupUi
 
     def retranslateAboutUi(self, ABOUT):
+        """
+        Retranslate About UI window; add labels and text to generated UI frame.
+        :param ABOUT:
+        :return:
+        """
+
         ABOUT.setWindowTitle(QCoreApplication.translate("ABOUT", u"HOW TO USE", None))
         self.shape_label.setText(QCoreApplication.translate("ABOUT", u"SHAPE", None))
         self.shape_label_2.setText(QCoreApplication.translate("ABOUT", u"Adjust the size of the image", None))
