@@ -341,13 +341,17 @@ class Ui_PROCGEN(object):
         pgm.generate_map(self.biome, self.scale, self.shape, self.octaves)
 
     def on_about_click(self):
+        """
+        On clicking about button on main window, open and show about window.
+        :return:
+        """
         self.w = AboutGUI()
         self.w.show()
 
 
 class Ui_ABOUT(object):
     """
-    About window generation and setup with QT Designer
+    About window generation and setup with QT Designer.
     """
     def setupUi(self, ABOUT):
         if not ABOUT.objectName():
