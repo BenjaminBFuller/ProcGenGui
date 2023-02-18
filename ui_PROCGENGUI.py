@@ -325,6 +325,11 @@ class Ui_PROCGEN(object):
         self.shape = self.comboBox_shape.currentText()
 
     def on_scale_click(self):
+        """
+        Setter for scale on combo box selection.
+
+        :return:
+        """
         self.scale = self.comboBox_scale.currentText()
 
     def on_generation_click(self, biome, scale, shape, octaves):
