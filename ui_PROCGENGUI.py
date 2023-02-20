@@ -319,6 +319,11 @@ class Ui_PROCGEN(object):
         self.biome = self.comboBox_biomes.currentText()
 
     def on_octaves_click(self):
+        """
+        Setter for octaves on combo box selection.
+        
+        :return: 
+        """
         self.octaves = self.comboBox_4.currentText()
 
     def on_shape_click(self):
