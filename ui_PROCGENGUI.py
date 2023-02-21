@@ -316,6 +316,11 @@ class Ui_PROCGEN(object):
 
     # Click functions: update variables on click with given user parameters
     def on_biomes_click(self):
+        """
+        Setter for biomes on combo box selection.
+
+        :return:
+        """
         self.biome = self.comboBox_biomes.currentText()
 
     def on_octaves_click(self):
