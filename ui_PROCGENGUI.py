@@ -206,7 +206,8 @@ class Ui_PROCGEN(object):
 
     def retranslateProcgenUi(self, PROCGEN):
         """
-        Add labels throughout (Titles, combo box elements,...) after UI generation
+        Add labels throughout (Titles, combo box elements,...) after UI generation.
+
         :param PROCGEN:
         :return:
         """
@@ -363,15 +364,18 @@ class Ui_PROCGEN(object):
     def on_about_click(self):
         """
         On clicking about button on main window, open and show about window.
+
         :return:
         """
-        self.w = AboutGUI()
-        self.w.show()
+        self.about_window = AboutGUI()
+        self.about_window.show()
 
 
 class Ui_ABOUT(object):
     """
     About window generation and setup with QT Designer.
+
+    :return:
     """
     def setupUi(self, ABOUT):
         if not ABOUT.objectName():
@@ -642,6 +646,7 @@ class Ui_ABOUT(object):
     def retranslateAboutUi(self, ABOUT):
         """
         Retranslate About UI window; add labels and text to generated UI frame.
+
         :param ABOUT:
         :return:
         """
