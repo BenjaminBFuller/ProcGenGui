@@ -133,3 +133,9 @@ dmypy.json
 
 # idea files
 .idea/
+
+
+.DS_Store
+
+# Project Generation Files
+map_gen_img.png
