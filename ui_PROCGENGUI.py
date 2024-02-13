@@ -5,10 +5,10 @@
 
 
 # imports
-from PySide2 import QtCore
-from PySide2.QtCore import *  # type: ignore
-from PySide2.QtGui import *  # type: ignore
-from PySide2.QtWidgets import *  # type: ignore
+from PySide6 import QtCore
+from PySide6.QtCore import *  # type: ignore
+from PySide6.QtGui import *  # type: ignore
+from PySide6.QtWidgets import *  # type: ignore
 from functools import partial
 import procgenmaps as pgm
 
@@ -138,7 +138,8 @@ class Ui_PROCGEN(object):
         self.reset_button.setObjectName("reset_button")
         self.reset_button.setGeometry(QRect(70, 310, 113, 32))
         self.comboBox_biomes = QComboBox(self.ui_frame)
-        self.comboBox_biomes.activated[str].connect(self.on_biomes_click)
+        self.comboBox_biomes.activated[int].connect(self.on_biomes_click)
+        self.comboBox_biomes.addItem("")
         self.comboBox_biomes.addItem("")
         self.comboBox_biomes.addItem("")
         self.comboBox_biomes.addItem("")
@@ -151,14 +152,14 @@ class Ui_PROCGEN(object):
         self.comboBox_biomes.setObjectName("comboBox_biomes")
         self.comboBox_biomes.setGeometry(QRect(190, 70, 111, 41))
         self.comboBox_shape = QComboBox(self.ui_frame)
-        self.comboBox_shape.activated[str].connect(self.on_shape_click)
+        self.comboBox_shape.activated[int].connect(self.on_shape_click)
         self.comboBox_shape.addItem("")
         self.comboBox_shape.addItem("")
         self.comboBox_shape.addItem("")
         self.comboBox_shape.setObjectName("comboBox_shape")
         self.comboBox_shape.setGeometry(QRect(190, 130, 111, 41))
         self.comboBox_scale = QComboBox(self.ui_frame)
-        self.comboBox_scale.activated[str].connect(self.on_scale_click)
+        self.comboBox_scale.activated[int].connect(self.on_scale_click)
         self.comboBox_scale.addItem("")
         self.comboBox_scale.addItem("")
         self.comboBox_scale.addItem("")
@@ -173,7 +174,7 @@ class Ui_PROCGEN(object):
         self.comboBox_scale.setObjectName("comboBox_scale")
         self.comboBox_scale.setGeometry(QRect(190, 190, 111, 41))
         self.comboBox_4 = QComboBox(self.ui_frame)
-        self.comboBox_4.activated[str].connect(self.on_octaves_click)
+        self.comboBox_4.activated[int].connect(self.on_octaves_click)
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
@@ -248,6 +249,9 @@ class Ui_PROCGEN(object):
         )
         self.comboBox_biomes.setItemText(
             8, QCoreApplication.translate("PROCGEN", "Graylands", None)
+        )
+        self.comboBox_biomes.setItemText(
+            9, QCoreApplication.translate("PROCGEN", "Topographic Map", None)
         )
 
         self.comboBox_shape.setItemText(

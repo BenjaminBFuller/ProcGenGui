@@ -442,6 +442,22 @@ def graylands_gen(shape, world, color_world):
                 color_world[i][j] = cs.white
 
 
+def topographic_map_gen(shape, world, color_world):
+    """Generates topographic map image with given user parameters"""
+    for i in range(shape[0]):
+        for j in range(shape[1]):
+            if world[i][j] < -.15:
+                color_world[i][j] = cs.black
+            elif world[i][j] < 0:
+                color_world[i][j] = cs.gldark_gray
+            elif world[i][j] < .15:
+                color_world[i][j] = cs.glgray
+            elif world[i][j] < .3:
+                color_world[i][j] = cs.gllight_gray
+            elif world[i][j] < 1.0:
+                color_world[i][j] = cs.white
+
+
 def create_img(color_world):
     """Converts image data and writes to png file in the directory"""
     # converts float6 to uint8 to prevent lossy conversion
@@ -468,7 +484,8 @@ def set_biome(given_biome, shape, world, color_world):
         "Terraces": terrace_gen,
         "Clouds": cloud_gen,
         "Rainbow": rainbow_gen,
-        "Graylands": graylands_gen}
+        "Graylands": graylands_gen,
+        "Topographic Map": topographic_map_gen}
     return biomes_dict[given_biome](shape, world, color_world)
 
 
