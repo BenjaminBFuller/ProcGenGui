@@ -1,6 +1,8 @@
 # ProcGenGui
 
-Built on Python 3.9. Does not run on Python 3.11 as Pyside2 and Shiboken2 do not have support for this version yet
+Built and runs on Python 3.9. 
+Does not run on Python 3.11 as Pyside2 and Shiboken2 do not have support for this version yet.
+
 (Last Updated February 2024)
 
 GUI for Procedurally Generated Maps
