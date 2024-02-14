@@ -446,14 +446,32 @@ def topographic_map_gen(shape, world, color_world):
     """Generates topographic map image with given user parameters"""
     for i in range(shape[0]):
         for j in range(shape[1]):
-            if world[i][j] < -.15:
+            if world[i][j] < -.3:
+                color_world[i][j] = cs.white
+            elif world[i][j] < -.29:
+                color_world[i][j] = cs.black
+            elif world[i][j] < -.2:
+                color_world[i][j] = cs.white
+            elif world[i][j] < -.19:
+                color_world[i][j] = cs.black
+            elif world[i][j] < -.1:
+                color_world[i][j] = cs.white
+            elif world[i][j] < -.09:
                 color_world[i][j] = cs.black
             elif world[i][j] < 0:
-                color_world[i][j] = cs.gldark_gray
-            elif world[i][j] < .15:
-                color_world[i][j] = cs.glgray
+                color_world[i][j] = cs.white
+            elif world[i][j] < .01:
+                color_world[i][j] = cs.black
+            elif world[i][j] < .1:
+                color_world[i][j] = cs.white
+            elif world[i][j] < .11:
+                color_world[i][j] = cs.black
+            elif world[i][j] < .2:
+                color_world[i][j] = cs.white
+            elif world[i][j] < .21:
+                color_world[i][j] = cs.black
             elif world[i][j] < .3:
-                color_world[i][j] = cs.gllight_gray
+                color_world[i][j] = cs.white
             elif world[i][j] < 1.0:
                 color_world[i][j] = cs.white
 
