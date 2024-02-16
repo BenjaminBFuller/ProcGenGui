@@ -472,6 +472,10 @@ def topographic_map_gen(shape, world, color_world):
                 color_world[i][j] = cs.black
             elif world[i][j] < .3:
                 color_world[i][j] = cs.white
+            elif world[i][j] < .31:
+                color_world[i][j] = cs.black
+            elif world[i][j] < .4:
+                color_world[i][j] = cs.white
             elif world[i][j] < 1.0:
                 color_world[i][j] = cs.white
 
