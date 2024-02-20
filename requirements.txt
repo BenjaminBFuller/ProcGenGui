@@ -2,5 +2,7 @@ imageio==2.34.0
 noise==1.2.2
 numpy==1.26.4
 pillow==10.2.0
-PySide2==5.15.2.1
-shiboken2==5.15.2.1
+PySide6==6.6.1
+PySide6-Addons==6.6.1
+PySide6-Essentials==6.6.1
+shiboken6==6.6.2
